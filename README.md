@@ -1,5 +1,6 @@
 # Tree View package
-[![CI](https://github.com/atom/tree-view/actions/workflows/ci.yml/badge.svg)](https://github.com/atom/tree-view/actions/workflows/ci.yml)
+
+[![CI](https://github.com/lunar-editor/tree-view/actions/workflows/ci.yml/badge.svg)](https://github.com/lunar-editor/tree-view/actions/workflows/ci.yml)
 
 Explore and open files in the current project.
 
