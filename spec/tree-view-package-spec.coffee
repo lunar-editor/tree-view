@@ -2647,12 +2647,13 @@ describe "TreeView", ->
 
           describe "when trying to duplicate a file with the same name but different case", ->
             it "shows an error message and does not close the dialog", ->
-              runs ->
-                newPath = path.join(dirPath, "TEST-FILE.txt")
-                copyDialog.miniEditor.setText(newPath)
+              newPath = path.join(dirPath, "TEST-FILE.txt")
+              copyDialog.miniEditor.setText(newPath)
 
+              waitForWorkspaceOpenEvent ->
                 atom.commands.dispatch copyDialog.element, 'core:confirm'
 
+              runs ->
                 if isFilesystemCaseSensitive()
                   expect(fs.existsSync(newPath)).toBeTruthy()
                   expect(atom.workspace.getActiveTextEditor().getPath()).toBe(newPath)
